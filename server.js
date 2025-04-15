@@ -5,8 +5,11 @@ app.use(express.json());
 
 let users = [];
 
-app.get("/", ()=>{
-    console.log("Server is live...");
+
+const PORT = 3000;
+
+app.get("/", (req, res)=>{
+    res.send("Server is live...");
 });
 
 app.post("/user", (req, res)=>{
@@ -28,7 +31,6 @@ app.post("/user", (req, res)=>{
     res.status(201).json({message : "User created Successfully", user: newUser});
 });
 
-const PORT = 3000;
 app.listen(PORT, ()=>{
     console.log(`Server is running at port ${PORT}`);
 });
