@@ -5,7 +5,7 @@ app.use(express.json());
 
 let users = [];
 
-app.get("/", (req, res)=>{
+app.get("/", ()=>{
     console.log("Server is live...");
 });
 
